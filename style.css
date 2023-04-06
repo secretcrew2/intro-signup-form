@@ -67,7 +67,9 @@ form input{
     font-weight: bold;
 }
 /* design */
-
+.description{
+    margin-bottom: 4rem;
+}
 .title, .description{
     color: white;
 }
@@ -125,5 +127,11 @@ a{
     }
     .bottom-section{
         grid-area: bottom;
+    }
+    .title, .description {
+        text-align: start;
+    }
+    .title{
+        margin-bottom: 1rem;
     }
 }
