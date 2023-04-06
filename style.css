@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: auto;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 2rem;
+    background-color: gray;
+    text-align: center;
+    min-height: 100vh;
+    background: url('images/bg-intro-mobile.png');
+    background-color: hsl(0, 100%, 74%) ;
+    font-family: 'Poppins', sans-serif;
+}
+.container{
+    margin: 0 auto;
+}
+.top-section{
+    background-color: hsl(248, 32%, 49%);
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+.bottom-section{
+    background-color: white;
+    border-radius: 0.5rem;
+}
+.bottom-section form{
+    padding: 1.5rem;
+}
+form input{
+    width: 100%;
+    padding: 1rem;
+}
+.text{
+    text-align: end;
+    font-size: 0.75rem;
+    margin-right: 0.5rem;
+
+}
+.input-button::placeholder{
+    content: url('images/icon-error.svg');
+    height: 20px;
+    float: right;
+}
+#btn{
+    border-style: none;
+    border-radius: 0.25rem;
+    color:white;
+    background-color: hsl(154, 59%, 51%);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    font-size: 0.75;
+    box-shadow: -7px -16px 23px -26px rgba(0,0,0,0.75) inset;
+
+}
+#btn:hover{
+    cursor: pointer;
+    opacity: 0.7;
+}
+.bolded-text{
+    font-weight: bold;
+}
+/* design */
+
+.title, .description{
+    color: white;
+}
+.description, .top-text{
+    line-height: 1.5rem;
+}
+.top-text{
+    margin: 0 3rem;
+    color: white;
+}
+.terms{
+    margin: 0 1.5rem;
+    font-size: 0.75rem
+}
+.text{
+    color: rgba(255, 0, 0, 0.7);
+    font-style: italic;
+    /* visibility: hidden; */
+
+}
+a{
+    text-decoration: none;
+    color: red;
+    font-weight: 500;
+}
+.text, .input-button::placeholder{
+    visibility: hidden;
+}
+.warning::placeholder{
+    visibility: visible !important ;
+}
+.warning{
+    border: 2px solid red;
+}
+@media (min-width:576px){
+    body{
+        background: url('images/bg-intro-desktop.png');
+        background-color: hsl(0, 100%, 74%) ;
+    }
+    .container{
+        max-width: 1000px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-areas: 
+            "text top"
+            "text bottom";
+    }
+    .header-content{
+        grid-area: text;
+        align-self: center;
+        margin-right: 5rem;
+    }
+    .top-section{
+        grid-area: top;
+    }
+    .bottom-section{
+        grid-area: bottom;
+    }
+}
