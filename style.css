@@ -43,7 +43,7 @@ form input{
     margin-right: 0.5rem;
 
 }
-.input-button::placeholder{
+.warning::placeholder{
     content: url('images/icon-error.svg');
     height: 20px;
     float: right;
@@ -93,12 +93,12 @@ a{
     color: red;
     font-weight: 500;
 }
-.text, .input-button::placeholder{
+.text{
     visibility: hidden;
 }
-.warning::placeholder{
+/* .warning::placeholder{
     visibility: visible !important ;
-}
+} */
 .warning{
     border: 2px solid red;
 }

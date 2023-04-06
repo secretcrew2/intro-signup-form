@@ -4,37 +4,28 @@ form.addEventListener('submit', function(event){
     event.preventDefault();
 })
 for(let i = 0; i < btn.length ; i++){
-    btn[i].addEventListener('keypress', () =>{
+    btn[i].addEventListener('input', () =>{
         hideWarning(i);
     });
 }
 
-var firstName;
-var lastName;
-var password;
-var email;
-let mapInput;
 
 // const warningIcon = document.getElementsByClassName('input-button');
 let inputType = document.getElementsByClassName('text');
 function receiveInput(){
 
-    firstName = document.getElementById('fname').value;
-    lastName = document.getElementById('lname').value;
-    email = document.getElementById('email').value;
-    password = document.getElementById('password').value;
+    const firstName = document.getElementById('fname').value;
+    const lastName = document.getElementById('lname').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
     let arrInput = [firstName, lastName, email, password];
-    mapInput = arrInput.map(arr => arr.length > 0);
+    let mapInput = arrInput.map(arr => arr.length > 0);
     for(let i = 0; i < mapInput.length; i++){
         if(!mapInput[i]){
             showWarning(i);
-        } else if(i===2){
-            if(!isValidEmail(email)){
-                form[i].nextElementSibling.innerText = 'Looks like this is not an email';
-                showWarning(i);
-            } else {
-                alert('success');
-            }
+        } else if(i===2 && !isValidEmail(email)){
+            form[i].nextElementSibling.textContent = 'Looks like this is not an email';
+            showWarning(i);
         }
     };
 }
